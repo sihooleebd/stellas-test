@@ -1,16 +1,13 @@
 ---
-layout: default
+layout: page
 title: About
 permalink: /about/
 ---
 
-<article class="content-page">
-  <h1>About STELLAS</h1>
-  <p>
-    STELLAS is a placeholder page for your school photography club. Use this page to introduce your team, your
-    creative direction, and how people can join or collaborate.
-  </p>
-  <p>
-    Suggested sections to add later: club history, yearly goals, member highlights, and contact information.
-  </p>
-</article>
+# About STELLAS
+
+STELLAS is our school astronomy club.
+
+We share the night sky through observation sessions, astrophotography projects, and sky education for students.
+
+Use this page to introduce your club history, current members, and how new students can join.

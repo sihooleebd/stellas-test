@@ -4,9 +4,9 @@ title: Gallery
 ---
 
 <section class="gallery-hero">
-  <p class="kicker">Stellas Photo Journal</p>
-  <h1>One Frame At A Time</h1>
-  <p class="lead">A placeholder gallery front page. Replace these posts with your club photos and stories.</p>
+  <p class="kicker">Stellas Astronomy Club</p>
+  <h1>Astrophotography Logbook</h1>
+  <p class="lead">One sky frame at a time. Replace these placeholders with your real observation and photo sessions.</p>
 </section>
 
 {% if site.posts and site.posts.size > 0 %}
@@ -26,6 +26,7 @@ title: Gallery
           </p>
 
           <ul class="specs">
+            {% if post.celestial_target %}<li><strong>Target:</strong> {{ post.celestial_target }}</li>{% endif %}
             {% if post.location %}<li><strong>Location:</strong> {{ post.location }}</li>{% endif %}
             {% if post.camera %}<li><strong>Camera:</strong> {{ post.camera }}</li>{% endif %}
             {% if post.lens %}<li><strong>Lens:</strong> {{ post.lens }}</li>{% endif %}

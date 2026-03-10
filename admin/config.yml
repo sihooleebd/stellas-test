@@ -1,0 +1,151 @@
+backend:
+  name: github
+  repo: sihooleebd/stellas-test
+  branch: master
+
+  # To use GitHub auth on Vercel/static hosting, add your OAuth service:
+  # base_url: https://your-oauth-service.example.com
+  # auth_endpoint: auth
+
+site_url: https://stellas.benjaminlee.kr
+display_url: https://stellas.benjaminlee.kr
+media_folder: media
+public_folder: /media
+publish_mode: simple
+
+collections:
+  - name: posts
+    label: Astro Gallery
+    label_singular: Astro Photo
+    folder: _posts
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}} | {{photographer}} | {{taken_at}}"
+    editor:
+      preview: false
+    sortable_fields:
+      - date
+      - title
+      - photographer
+    fields:
+      - label: Photo Title
+        name: title
+        widget: string
+        hint: "Public title shown under the photo."
+        required: true
+      - label: Publish Date
+        name: date
+        widget: datetime
+        date_format: "YYYY-MM-DD"
+        time_format: false
+        format: "YYYY-MM-DD"
+        hint: "Date this entry appears in the timeline."
+        required: true
+      - label: Photo
+        name: photo
+        widget: image
+        hint: "Upload the final astrophotography image file."
+        required: true
+      - label: Photographer
+        name: photographer
+        widget: string
+        hint: "Club member who took the photo."
+        required: true
+      - label: Celestial Target
+        name: celestial_target
+        widget: string
+        hint: "Optional. Example: Orion Nebula (M42), Moon, Jupiter."
+        required: false
+      - label: Location
+        name: location
+        widget: string
+        hint: "Optional. Example: School rooftop, mountain observatory."
+        required: false
+      - label: Date Taken
+        name: taken_at
+        widget: date
+        format: "YYYY-MM-DD"
+        hint: "Camera shot date shown on the homepage."
+        required: false
+      - label: Camera
+        name: camera
+        widget: string
+        hint: "Optional. Example: Sony A7 IV."
+        required: false
+      - label: Lens
+        name: lens
+        widget: string
+        hint: "Optional. Example: 24mm f/1.4."
+        required: false
+      - label: ISO
+        name: iso
+        widget: number
+        value_type: int
+        hint: "Optional. Leave blank if unknown."
+        required: false
+      - label: Aperture
+        name: aperture
+        widget: string
+        hint: "Optional. Example: f/2.8."
+        required: false
+      - label: Shutter Speed
+        name: shutter_speed
+        widget: string
+        hint: "Optional. Example: 15s or 1/200s."
+        required: false
+      - label: Editing Software
+        name: editing_software
+        widget: string
+        hint: "Optional. Example: Lightroom, Siril, PixInsight."
+        required: false
+      - label: Caption / Story
+        name: body
+        widget: markdown
+        hint: "Observation notes, weather, and story behind this frame."
+        required: false
+
+  - name: pages
+    label: Website Pages
+    editor:
+      preview: false
+    files:
+      - label: About Page
+        name: about
+        file: about.md
+        fields:
+          - label: Layout
+            name: layout
+            widget: hidden
+            default: page
+          - label: Page Title
+            name: title
+            widget: string
+            required: true
+          - label: Permalink
+            name: permalink
+            widget: hidden
+            default: /about/
+          - label: Body
+            name: body
+            widget: markdown
+            hint: "Write your astronomy club intro here."
+      - label: Stellar Festival Page
+        name: stellar_festival
+        file: stellar-festival.md
+        fields:
+          - label: Layout
+            name: layout
+            widget: hidden
+            default: page
+          - label: Page Title
+            name: title
+            widget: string
+            required: true
+          - label: Permalink
+            name: permalink
+            widget: hidden
+            default: /stellar-festival/
+          - label: Body
+            name: body
+            widget: markdown
+            hint: "Add event date, observation sessions, and announcements."

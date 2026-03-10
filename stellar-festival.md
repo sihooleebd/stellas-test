@@ -1,24 +1,17 @@
 ---
-layout: default
+layout: page
 title: Stellar Festival
 permalink: /stellar-festival/
 ---
 
-<article class="content-page">
-  <h1>Stellar Festival</h1>
-  <p>
-    Stellar Festival is a placeholder page for your annual event. Replace this text with your official schedule,
-    booth map, and program highlights.
-  </p>
-  <p>
-    Example placeholder details:
-  </p>
-  <ul>
-    <li>Date: October 18, 2026</li>
-    <li>Venue: Main School Courtyard</li>
-    <li>Theme: Light, Motion, Memory</li>
-  </ul>
-  <p>
-    Add ticketing info, lineup announcements, and gallery links as you prepare the event.
-  </p>
-</article>
+# Stellar Festival
+
+Stellar Festival is our astronomy club's annual public event.
+
+Replace this placeholder with your final event details.
+
+- Date: October 18, 2026
+- Venue: Main School Courtyard
+- Theme: Under One Sky
+
+Suggested sections: telescope booths, sky lecture schedule, astrophotography exhibition, and volunteer guide.

@@ -1,16 +1,17 @@
 ---
-title: Neon Corridor
+title: Moonrise Through Thin Clouds
 date: 2026-02-24
-photo: https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&fit=crop&w=1600&q=80
+photo: https://images.unsplash.com/photo-1462331940025-496dfbfc7564?auto=format&fit=crop&w=1600&q=80
 photographer: Jisoo Kim
-location: Downtown Alley
+celestial_target: Waxing Gibbous Moon
+location: East Gate Field
 taken_at: 2026-02-21
 camera: Fujifilm X-T5
-lens: XF 23mm f/1.4
-iso: 1250
-aperture: f/1.8
-shutter_speed: 1/80s
+lens: XF 90mm f/2
+iso: 800
+aperture: f/4
+shutter_speed: 1/250s
 editing_software: Capture One
 ---
 
-Night-scene placeholder write-up. Use this section for mood notes, composition choices, or project context.
+Placeholder caption: a short session before cloud cover, focused on moon texture and edge contrast.
