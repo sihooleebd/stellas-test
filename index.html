@@ -1,0 +1,81 @@
+---
+layout: default
+title: Gallery
+---
+
+<section class="gallery-hero">
+  <p class="kicker">Stellas Photo Journal</p>
+  <h1>One Frame At A Time</h1>
+  <p class="lead">A placeholder gallery front page. Replace these posts with your club photos and stories.</p>
+</section>
+
+{% if site.posts and site.posts.size > 0 %}
+  <section class="gallery-shell">
+    {% for post in site.posts %}
+      {% assign taken_date = post.taken_at | default: post.date %}
+      <article class="gallery-item{% if forloop.first %} is-active{% endif %}" data-index="{{ forloop.index0 }}">
+        <div class="gallery-photo">
+          <img src="{{ post.photo }}" alt="{{ post.title | escape }}" {% unless forloop.first %}loading="lazy"{% endunless %}>
+        </div>
+
+        <div class="gallery-meta">
+          <h2>{{ post.title }}</h2>
+          <p class="meta-line">
+            Taken by <strong>{{ post.photographer }}</strong>
+            on <time datetime="{{ taken_date | date_to_xmlschema }}">{{ taken_date | date: "%B %d, %Y" }}</time>
+          </p>
+
+          <ul class="specs">
+            {% if post.location %}<li><strong>Location:</strong> {{ post.location }}</li>{% endif %}
+            {% if post.camera %}<li><strong>Camera:</strong> {{ post.camera }}</li>{% endif %}
+            {% if post.lens %}<li><strong>Lens:</strong> {{ post.lens }}</li>{% endif %}
+            {% if post.iso %}<li><strong>ISO:</strong> {{ post.iso }}</li>{% endif %}
+            {% if post.aperture %}<li><strong>Aperture:</strong> {{ post.aperture }}</li>{% endif %}
+            {% if post.shutter_speed %}<li><strong>Shutter:</strong> {{ post.shutter_speed }}</li>{% endif %}
+            {% if post.editing_software %}<li><strong>Edited With:</strong> {{ post.editing_software }}</li>{% endif %}
+          </ul>
+
+          <div class="post-copy">
+            {{ post.content }}
+          </div>
+        </div>
+      </article>
+    {% endfor %}
+
+    <div class="gallery-controls">
+      <button type="button" id="prev-photo">Previous</button>
+      <p id="gallery-counter">1 / {{ site.posts.size }}</p>
+      <button type="button" id="next-photo">Next</button>
+    </div>
+  </section>
+
+  <script>
+    (function () {
+      const slides = Array.from(document.querySelectorAll(".gallery-item"));
+      const prevButton = document.getElementById("prev-photo");
+      const nextButton = document.getElementById("next-photo");
+      const counter = document.getElementById("gallery-counter");
+      let index = 0;
+
+      function show(newIndex) {
+        slides[index].classList.remove("is-active");
+        index = (newIndex + slides.length) % slides.length;
+        slides[index].classList.add("is-active");
+        counter.textContent = (index + 1) + " / " + slides.length;
+      }
+
+      prevButton.addEventListener("click", function () {
+        show(index - 1);
+      });
+
+      nextButton.addEventListener("click", function () {
+        show(index + 1);
+      });
+    })();
+  </script>
+{% else %}
+  <article class="content-page">
+    <h2>No photos yet</h2>
+    <p>Add posts in <code>_posts/</code> to populate the gallery.</p>
+  </article>
+{% endif %}

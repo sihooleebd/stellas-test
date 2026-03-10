@@ -1,0 +1,7 @@
+title: STELLAS
+description: Placeholder content for the Stellas photo club site.
+baseurl: ""
+url: "https://stellas.benjaminlee.kr"
+timezone: Asia/Seoul
+markdown: kramdown
+permalink: /:categories/:year/:month/:day/:title/
